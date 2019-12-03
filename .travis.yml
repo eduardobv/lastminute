@@ -1,8 +1,6 @@
 language: java
 os:
     - linux
-    - osx
-    - windows
 jdk:
     - openjdk11 
 branches:
@@ -10,4 +8,5 @@ branches:
     - master
     - develop
 script: 
-    - mvn clean compile test
+    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+    - mvn test -B
