@@ -8,5 +8,6 @@ jdk:
 branches:
   only:
     - master
+    - develop
 script: 
     - mvn clean compile test
