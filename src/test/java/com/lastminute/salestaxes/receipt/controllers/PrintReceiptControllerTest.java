@@ -1,6 +1,7 @@
 package com.lastminute.salestaxes.receipt.controllers;
 
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -31,7 +32,7 @@ public class PrintReceiptControllerTest {
 		System.setOut(new PrintStream(outContent));
 
 		receiptController.printReceipt(input);
-		assertTrue(output.equals(outContent.toString()));
+		assertThat(output, is(outContent.toString()));
 
 		System.setOut(originalOut);
 		
