@@ -61,7 +61,8 @@ public class PrintReceiptServiceImplTest {
 
 		String output = "1 book: 12.49\r\n" + "1 music CD: 16.49\r\n" + "1 chocolate bar: 0.85\r\n"
 				+ "Sales Taxes: 1.50\r\n" + "Total: 29.83\r\n";
-
+		String lineSeparator = System.getProperty("line.separator");
+		output = output.replaceAll("\r\n", lineSeparator);
 		printReceiptService.printReceipt(receipt);
 		assertEquals(output, outContent.toString());
 		System.setOut(originalOut);
