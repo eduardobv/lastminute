@@ -1,6 +1,6 @@
 package com.lastminute.salestaxes.receipt.controllers;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -31,7 +31,7 @@ public class PrintReceiptControllerTest {
 		System.setOut(new PrintStream(outContent));
 
 		receiptController.printReceipt(input);
-		assertEquals(output, outContent.toString());
+		assertTrue(output.equals(outContent.toString()));
 
 		System.setOut(originalOut);
 		
